@@ -36,9 +36,8 @@ function playSound(lettre){
             break ;
     }
     var potona = document.querySelector("." + lettre);
-    var oldClassName = potona.className;
     potona.classList.add("pressed");
-    setTimeout(() => {potona.className = oldClassName;}, 1000)
+    setTimeout(() => {potona.classList.remove("pressed")}, 1000)
     
 }
 
