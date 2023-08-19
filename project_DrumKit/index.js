@@ -35,10 +35,17 @@ function playSound(lettre){
             audio.play();
             break ;
     }
+    var potona = document.querySelector("." + lettre);
+    var oldClassName = potona.className;
+    potona.classList.add("pressed");
+    setTimeout(() => {potona.className = oldClassName;}, 1000)
+    
 }
 
 document.querySelectorAll('button').forEach((item) => {
-    item.addEventListener("click",  () => {playSound(item.innerHTML)});
+    item.addEventListener("click",  () => {
+            playSound(item.innerHTML);
+        });
 })
 
 document.addEventListener('keypress', (event) => {
